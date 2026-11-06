@@ -1,0 +1,19 @@
+{
+  "os_manifest_version": "1.0.0",
+  "target_node_architecture": "x86_64_or_riscv64",
+  "immutable_kernel_profile": {
+    "kernel_base": "linux-rt-minimal",
+    "preemption_type": "PREEMPT_RT",
+    "boot_flags": [
+      "isolcpus=1-31",
+      "nohz_full=1-31",
+      "rcu_nocbs=1-31",
+      "processor.max_cstate=1"
+    ]
+  },
+  "provisioning_dependencies": {
+    "container_runtime": "docker-ce",
+    "network_mesh": "wireguard",
+    "firewall_profile": "strict_egress_only"
+  }
+}
